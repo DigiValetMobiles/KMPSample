@@ -1,0 +1,47 @@
+query Continents {
+    continents {
+        code
+        countries {
+            code
+            name
+            native
+            phone
+#            continent {
+#                code
+#                name
+#                countries {
+#                    code
+#                    name
+#                    native
+#                    phone
+#                    currency
+#                    emoji
+#                    emojiU
+#                }
+#            }
+#            currency
+#            languages {
+#                code
+#                name
+#                native
+#                rtl
+#            }
+#            emoji
+#            emojiU
+#            states {
+#                code
+#                name
+#                country {
+#                    code
+#                    name
+#                    native
+#                    phone
+#                    currency
+#                    emoji
+#                    emojiU
+#                }
+#            }
+        }
+        name
+    }
+}

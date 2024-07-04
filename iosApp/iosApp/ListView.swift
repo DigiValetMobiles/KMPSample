@@ -1,13 +1,11 @@
 import SwiftUI
-import KMPNativeCoroutinesAsync
-import KMPObservableViewModelSwiftUI
 import Shared
 
 struct ListView: View {
-    @StateViewModel
-    var viewModel = ListViewModel(
-        museumRepository: KoinDependencies().museumRepository
-    )
+//    @StateViewModel
+//    var viewModel = ListViewModel(
+//        countriesRepository: KoinDependencies().countriesRepository
+//    )
 
     let columns = [
         GridItem(.adaptive(minimum: 120), alignment: .top)
@@ -15,23 +13,27 @@ struct ListView: View {
 
     var body: some View {
         ZStack {
-            if !viewModel.objects.isEmpty {
+//            if !viewModel.objects.isEmpty {
                 NavigationStack {
                     ScrollView {
                         LazyVGrid(columns: columns, alignment: .leading, spacing: 20) {
-                            ForEach(viewModel.objects, id: \.self) { item in
-                                NavigationLink(destination: DetailView(objectId: item.objectID)) {
-                                    ObjectFrame(obj: item, onClick: {})
-                                }
-                                .buttonStyle(PlainButtonStyle())
+                            Button("API CALL") {
+                                getAllContinents()
                             }
+//                            ForEach(viewModel.objects, id: \.self) { item in
+//                                NavigationLink(destination: DetailView(objectId: 1)) {
+//                                    ObjectFrame(obj: item, onClick: {})
+//                                }
+//                                .buttonStyle(PlainButtonStyle())
+//                            }
                         }
                         .padding(.horizontal)
                     }
                 }
-            } else {
-                Text("No data available")
-            }
+//            } 
+//            else {
+//                Text("No data available")
+//            }
         }
     }
 }

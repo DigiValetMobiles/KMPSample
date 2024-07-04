@@ -9,7 +9,6 @@ This is a basic Kotlin Multiplatform app template for Android and iOS. It includ
 >
 > The [`amper` branch](https://github.com/Kotlin/KMP-App-Template-Native/tree/amper) showcases the same project configured with [Amper](https://github.com/JetBrains/amper).
 
-![Screenshots of the app](images/screenshots.png)
 
 ### Technologies
 

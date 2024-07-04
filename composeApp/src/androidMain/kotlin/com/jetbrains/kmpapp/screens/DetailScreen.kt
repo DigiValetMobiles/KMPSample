@@ -1,122 +1,85 @@
 package com.jetbrains.kmpapp.screens
 
 import androidx.compose.animation.AnimatedContent
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.text.selection.SelectionContainer
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImage
-import com.jetbrains.kmpapp.R
-import com.jetbrains.kmpapp.data.MuseumObject
+import com.jetbrains.kmpapp.graphql.ContinentDetailsQuery
+import com.jetbrains.kmpapp.utils.States
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun DetailScreen(objectId: Int, navigateBack: () -> Unit) {
-//    val viewModel: DetailViewModel = koinViewModel()
-//    val obj by viewModel.museumObject.collectAsState()
+fun DetailScreen(continentCode: String, navigateBack: () -> Unit) {
+    val viewModel: CountriesViewModel = koinViewModel()
 
-//    LaunchedEffect(objectId) {
-//        viewModel.setId(objectId)
-//    }
+    val objects by viewModel.countries.collectAsState()
 
-//    AnimatedContent(obj != null) { objectAvailable ->
-//        if (objectAvailable) {
-//            ObjectDetails(obj!!, onBackClick = navigateBack)
-//        } else {
-//            EmptyScreenContent(Modifier.fillMaxSize())
-//        }
-//    }
+    viewModel.getCountries(continentCode)
+
+    AnimatedContent(objects) {
+        when (it) {
+            is States.Success -> {
+                if (it.data?.countries.isNullOrEmpty()) EmptyScreenContent(Modifier.fillMaxSize())
+                else ObjectGrid(
+                    continent = (objects as States.Success<ContinentDetailsQuery.Continent?>).data,
+//                onObjectClick = navigateToDetails,
+                )
+            }
+
+            else -> EmptyScreenContent(Modifier.fillMaxSize())
+        }
+    }
 }
 
 @Composable
-private fun ObjectDetails(
-    obj: MuseumObject,
-    onBackClick: () -> Unit,
+private fun ObjectGrid(
+    continent: ContinentDetailsQuery.Continent?,
     modifier: Modifier = Modifier,
 ) {
-    Scaffold(
-        topBar = {
-            TopAppBar(backgroundColor = Color.White) {
-                IconButton(onClick = onBackClick) {
-                    Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.back))
-                }
-            }
-        },
-        modifier = modifier,
-    ) { paddingValues ->
-        Column(
-            Modifier
-                .verticalScroll(rememberScrollState())
-                .padding(paddingValues)
-        ) {
-            AsyncImage(
-                model = obj.primaryImageSmall,
-                contentDescription = obj.title,
-                contentScale = ContentScale.FillWidth,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color.LightGray)
-            )
 
-            SelectionContainer {
-                Column(Modifier.padding(12.dp)) {
-                    Text(obj.title, style = MaterialTheme.typography.h6)
-                    Spacer(Modifier.height(6.dp))
-                    LabeledInfo(stringResource(R.string.label_artist), obj.artistDisplayName)
-                    LabeledInfo(stringResource(R.string.label_date), obj.objectDate)
-                    LabeledInfo(stringResource(R.string.label_dimensions), obj.dimensions)
-                    LabeledInfo(stringResource(R.string.label_medium), obj.medium)
-                    LabeledInfo(stringResource(R.string.label_department), obj.department)
-                    LabeledInfo(stringResource(R.string.label_repository), obj.repository)
-                    LabeledInfo(stringResource(R.string.label_credits), obj.creditLine)
-                }
+    Column(modifier.padding(8.dp)) {
+        Text(
+            continent?.name.orEmpty(),
+            style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Bold)
+        )
+        LazyVerticalGrid(
+//        columns = GridCells.Adaptive(180.dp),
+            columns = GridCells.Fixed(1),
+            modifier = modifier.fillMaxSize(),
+            contentPadding = PaddingValues(8.dp)
+        ) {
+            items(continent?.countries.orEmpty(), key = { it?.name.orEmpty() }) { obj ->
+                ObjectFrame(country = obj)
             }
         }
     }
 }
 
 @Composable
-private fun LabeledInfo(
-    label: String,
-    data: String,
+private fun ObjectFrame(
+    country: ContinentDetailsQuery.Country?,
     modifier: Modifier = Modifier,
 ) {
-    Column(modifier.padding(vertical = 4.dp)) {
-        Spacer(Modifier.height(6.dp))
+    Column(modifier.padding(8.dp)) {
         Text(
-            buildAnnotatedString {
-                withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
-                    append("$label: ")
-                }
-                append(data)
-            }
+            country?.name.orEmpty(),
+            style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Bold)
+        )
+        Text(country?.code.orEmpty(), style = MaterialTheme.typography.body2)
+        Text(
+            "Phone: ${country?.phone}", style = MaterialTheme.typography.caption
         )
     }
 }

@@ -1,6 +1,7 @@
 package com.jetbrains.kmpapp
 
 import android.app.Application
+import com.apollographql.apollo3.cache.normalized.sql.SqlNormalizedCacheFactory
 import com.jetbrains.kmpapp.di.initKoin
 import com.jetbrains.kmpapp.screens.CountriesViewModel
 import org.koin.dsl.module
@@ -11,7 +12,7 @@ class MuseumApp : Application() {
         initKoin(
             listOf(
                 module {
-                    factory { CountriesViewModel(get()) }
+                    factory { CountriesViewModel(get(), SqlNormalizedCacheFactory(this@MuseumApp, "apollo.db")) }
                 }
             )
         )

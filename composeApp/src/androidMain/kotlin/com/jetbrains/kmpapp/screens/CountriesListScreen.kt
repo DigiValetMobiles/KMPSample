@@ -1,6 +1,7 @@
 package com.jetbrains.kmpapp.screens
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,11 +22,13 @@ import com.jetbrains.kmpapp.utils.States
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun CountriesListScreen(navigateToDetails: (objectId: Int) -> Unit) {
+fun CountriesListScreen(
+    navigateToDetails: (continentCode: String) -> Unit,
+) {
     val viewModel: CountriesViewModel = koinViewModel()
     val objects by viewModel.continents.collectAsState()
 
-    viewModel.getContinents()
+    viewModel.getContinents("")
 
     AnimatedContent(objects) {
         when (it) {
@@ -33,7 +36,7 @@ fun CountriesListScreen(navigateToDetails: (objectId: Int) -> Unit) {
                 if (it.data.isEmpty()) EmptyScreenContent(Modifier.fillMaxSize())
                 else ObjectGrid(
                     objects = (objects as States.Success<List<ContinentsQuery.Continent?>>).data,
-//                onObjectClick = navigateToDetails,
+                onObjectClick = navigateToDetails,
                 )
             }
 
@@ -45,6 +48,7 @@ fun CountriesListScreen(navigateToDetails: (objectId: Int) -> Unit) {
 @Composable
 private fun ObjectGrid(
     objects: List<ContinentsQuery.Continent?>,
+    onObjectClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     LazyVerticalGrid(
@@ -54,7 +58,7 @@ private fun ObjectGrid(
         contentPadding = PaddingValues(8.dp)
     ) {
         items(objects, key = { it?.code.orEmpty() }) { obj ->
-            ObjectFrame(obj = obj)
+            ObjectFrame(obj = obj, onObjectClick)
         }
     }
 }
@@ -62,9 +66,11 @@ private fun ObjectGrid(
 @Composable
 private fun ObjectFrame(
     obj: ContinentsQuery.Continent?,
+    onObjectClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Column(modifier.padding(8.dp)) {
+    Column(modifier.padding(8.dp)
+        .clickable { obj?.code?.let { onObjectClick(it) } }) {
         Text(
             obj?.code.orEmpty(),
             style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Bold)

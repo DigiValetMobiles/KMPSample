@@ -33,6 +33,8 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(projects.shared)
+            implementation(libs.apollo.normalized.cache)
+            implementation(libs.apollo.normalized.cache.sqlite)
         }
     }
 }

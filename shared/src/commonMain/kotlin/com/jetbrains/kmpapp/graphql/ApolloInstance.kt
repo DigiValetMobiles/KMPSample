@@ -3,14 +3,15 @@ package com.jetbrains.kmpapp.graphql
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.cache.normalized.api.NormalizedCacheFactory
 import com.apollographql.apollo3.cache.normalized.normalizedCache
+import com.apollographql.apollo3.cache.normalized.sql.SqlNormalizedCacheFactory
 
 
 internal object ApolloInstance {
 
-    fun getApolloClient(cacheFactory: NormalizedCacheFactory): ApolloClient {
+    fun getApolloClient(): ApolloClient {
         val apolloClient = ApolloClient.Builder()
             .serverUrl("https://countries.trevorblades.com/graphql")
-            .normalizedCache(cacheFactory)
+            .normalizedCache(SqlNormalizedCacheFactory("apollo.db"))
             .build()
         return apolloClient
     }

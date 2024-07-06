@@ -4,8 +4,8 @@ query Continents {
         countries {
             code
             name
-            native
             phone
+#            native
 #            continent {
 #                code
 #                name

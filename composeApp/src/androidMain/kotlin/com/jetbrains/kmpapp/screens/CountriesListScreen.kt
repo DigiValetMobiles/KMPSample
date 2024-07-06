@@ -17,7 +17,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.jetbrains.kmpapp.graphql.ContinentsQuery
+import com.jetbrains.kmpapp.data.Continent
 import com.jetbrains.kmpapp.utils.States
 import org.koin.androidx.compose.koinViewModel
 
@@ -25,17 +25,15 @@ import org.koin.androidx.compose.koinViewModel
 fun CountriesListScreen(
     navigateToDetails: (continentCode: String) -> Unit,
 ) {
-    val viewModel: CountriesViewModel = koinViewModel()
+    val viewModel: ContinentsViewModel = koinViewModel()
     val objects by viewModel.continents.collectAsState()
-
-    viewModel.getContinents("")
 
     AnimatedContent(objects) {
         when (it) {
             is States.Success -> {
                 if (it.data.isEmpty()) EmptyScreenContent(Modifier.fillMaxSize())
                 else ObjectGrid(
-                    objects = (objects as States.Success<List<ContinentsQuery.Continent?>>).data,
+                    objects = (objects as States.Success<List<Continent?>>).data,
                 onObjectClick = navigateToDetails,
                 )
             }
@@ -47,7 +45,7 @@ fun CountriesListScreen(
 
 @Composable
 private fun ObjectGrid(
-    objects: List<ContinentsQuery.Continent?>,
+    objects: List<Continent?>,
     onObjectClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -65,7 +63,7 @@ private fun ObjectGrid(
 
 @Composable
 private fun ObjectFrame(
-    obj: ContinentsQuery.Continent?,
+    obj: Continent?,
     onObjectClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {

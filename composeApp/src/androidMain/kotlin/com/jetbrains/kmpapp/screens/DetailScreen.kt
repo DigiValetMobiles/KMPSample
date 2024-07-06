@@ -22,7 +22,7 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun DetailScreen(continentCode: String, navigateBack: () -> Unit) {
-    val viewModel: CountriesViewModel = koinViewModel()
+    val viewModel: DetailsViewModel = koinViewModel()
 
     val objects by viewModel.countries.collectAsState()
 

@@ -6,6 +6,7 @@ import com.jetbrains.kmpapp.data.MuseumApi
 import com.jetbrains.kmpapp.data.MuseumRepository
 import com.jetbrains.kmpapp.data.MuseumStorage
 import com.jetbrains.kmpapp.graphql.CountriesRepository
+import com.jetbrains.kmpapp.usecases.ContinentsUseCase
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.http.ContentType

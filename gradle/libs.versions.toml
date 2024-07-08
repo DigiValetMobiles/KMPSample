@@ -13,6 +13,8 @@ kotlin = "2.0.0"
 ksp = "2.0.0-1.0.22"
 ktor = "2.3.11"
 apollo = "3.8.2"
+dataStoreVersion = "1.1.1"
+atomicfu = "0.23.2"
 
 
 [libraries]
@@ -33,6 +35,8 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+androidx-datastore-core-okio = { group = "androidx.datastore", name = "datastore-core-okio", version.ref = "dataStoreVersion" }
+androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "dataStoreVersion" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

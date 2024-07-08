@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.apollographql.apollo3.cache.normalized.sql.SqlNormalizedCacheFactory
 import com.jetbrains.kmpapp.data.Continent
 import com.jetbrains.kmpapp.graphql.CountriesRepository
+import com.jetbrains.kmpapp.usecases.ContinentsUseCase
 import com.jetbrains.kmpapp.utils.States
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -25,7 +26,7 @@ class ContinentsViewModel(
 
     fun getContinents() {
         viewModelScope.launch {
-            _continents.value = countriesRepository.getContinents()
+            _continents.value = ContinentsUseCase(countriesRepository).invoke()
         }
     }
 

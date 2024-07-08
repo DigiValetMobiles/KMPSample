@@ -44,6 +44,8 @@ kotlin {
             implementation(libs.apollo.runtime)
             implementation(libs.apollo.normalized.cache)
             implementation(libs.apollo.normalized.cache.sqlite)
+            api(libs.androidx.datastore.preferences.core)
+            api(libs.androidx.datastore.core.okio)
 
 //            api(libs.kmp.observable.viewmodel)
 

@@ -7,6 +7,7 @@ import com.apollographql.apollo3.cache.normalized.api.NormalizedCacheFactory
 import com.apollographql.apollo3.cache.normalized.fetchPolicy
 import com.jetbrains.kmpapp.data.Continent
 import com.jetbrains.kmpapp.data.ContinentsData
+import com.jetbrains.kmpapp.database.AppDatabase
 import com.jetbrains.kmpapp.local.AppPreferenceKeys
 import com.jetbrains.kmpapp.local.DataPreferenceKeys
 import com.jetbrains.kmpapp.local.DataStorePreferences
@@ -14,8 +15,11 @@ import com.jetbrains.kmpapp.utils.HttpError
 import com.jetbrains.kmpapp.utils.States
 import kotlinx.serialization.json.Json
 
-class CountriesRepository {
+class CountriesRepository(val appDatabase: AppDatabase) {
 
+    /**
+     * Api calling for all continent details
+    * */
     suspend fun getContinents(): States<List<Continent?>> {
         try {
             ApolloInstance.getApolloClient().query(ContinentsQuery()).fetchPolicy(
@@ -50,9 +54,11 @@ class CountriesRepository {
         }
     }
 
+    /**
+     * Api calling for countries details for selected continent
+     * */
     suspend fun getCountries(
-        cacheFactory: NormalizedCacheFactory,
-        continentCode: String
+        cacheFactory: NormalizedCacheFactory, continentCode: String
     ): States<ContinentDetailsQuery.Continent?> {
         try {
             ApolloInstance.getApolloClient().query(ContinentDetailsQuery(continentCode))

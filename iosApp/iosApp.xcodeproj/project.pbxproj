@@ -13,7 +13,8 @@
 		272802BB2C2041430059D4EF /* KoinDependencies.kt in Resources */ = {isa = PBXBuildFile; fileRef = 2728029D2C2041430059D4EF /* KoinDependencies.kt */; };
 		272802BC2C2041430059D4EF /* MuseumApi.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802A32C2041430059D4EF /* MuseumApi.kt */; };
 		272802BD2C2041430059D4EF /* MuseumObject.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802A42C2041430059D4EF /* MuseumObject.kt */; };
-		272802BE2C2041430059D4EF /* MuseumRepository.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802A52C2041430059D4EF /* MuseumRepository.kt */; };
+		272802BE2C2041430059D4EF /*
+		MuseumRepository.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802A52C2041430059D4EF /* MuseumRepository.kt */; };
 		272802BF2C2041430059D4EF /* MuseumStorage.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802A62C2041430059D4EF /* MuseumStorage.kt */; };
 		272802C02C2041430059D4EF /* Koin.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802A82C2041430059D4EF /* Koin.kt */; };
 		272802C12C2041430059D4EF /* ApolloInstance.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802AA2C2041430059D4EF /* ApolloInstance.kt */; };
@@ -25,6 +26,7 @@
 		272802C72C2041430059D4EF /* AppDispatcher.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802B22C2041430059D4EF /* AppDispatcher.kt */; };
 		272802C82C2041430059D4EF /* ErrorManager.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802B32C2041430059D4EF /* ErrorManager.kt */; };
 		272802C92C2041430059D4EF /* States.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802B42C2041430059D4EF /* States.kt */; };
+		27F012992C393BCB0050224A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F012982C393BC20050224A /* libsqlite3.tbd */; };
 		359241E82C2D2C8A00DDF118 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359241E62C2D2C8A00DDF118 /* ViewModel.swift */; };
 		359241E92C2D2C8A00DDF118 /* EnumCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359241E72C2D2C8A00DDF118 /* EnumCreation.swift */; };
 		35D909AE2C2559C700829366 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D909AD2C2559B800829366 /* Shared.framework */; };
@@ -66,6 +68,8 @@
 		272802B22C2041430059D4EF /* AppDispatcher.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppDispatcher.kt; sourceTree = "<group>"; };
 		272802B32C2041430059D4EF /* ErrorManager.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ErrorManager.kt; sourceTree = "<group>"; };
 		272802B42C2041430059D4EF /* States.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = States.kt; sourceTree = "<group>"; };
+		27F012962C393BB70050224A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		27F012982C393BC20050224A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		359241E62C2D2C8A00DDF118 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		359241E72C2D2C8A00DDF118 /* EnumCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCreation.swift; sourceTree = "<group>"; };
 		35A68E322C2558240094BC0E /* SharedWithYou.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedWithYou.framework; path = System/Library/Frameworks/SharedWithYou.framework; sourceTree = SDKROOT; };
@@ -83,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F012992C393BCB0050224A /* libsqlite3.tbd in Frameworks */,
 				35D909AE2C2559C700829366 /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +249,8 @@
 		42799AB246E5F90AF97AA0EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27F012982C393BC20050224A /* libsqlite3.tbd */,
+				27F012962C393BB70050224A /* libsqlite3.0.tbd */,
 				35D909AD2C2559B800829366 /* Shared.framework */,
 				35A68E322C2558240094BC0E /* SharedWithYou.framework */,
 				35A68E332C2558240094BC0E /* SharedWithYouCore.framework */,

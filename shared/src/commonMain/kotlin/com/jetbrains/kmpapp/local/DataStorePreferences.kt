@@ -30,7 +30,7 @@ object DataStorePreferences {
 
 
     /** This returns us a flow of data from DataStore.
-     * Basically as soon we update the value in Datastore,
+     * As soon we update the value in Datastore,
      * the values returned by it also changes.
      */
     suspend fun <T> getPreference(key: Preferences.Key<T>, defaultValue: T): Flow<T> =
@@ -46,13 +46,15 @@ object DataStorePreferences {
         }
 
     /**
-     *  This returns the last saved value of the key. If we change the value,
-     *  it wont effect the values produced by this function
+     * This returns the last saved value of the key. If we change the value,
+     * it wont effect the values produced by this function
      **/
     suspend fun <T> getFirstPreference(key: Preferences.Key<T>, defaultValue: T): T =
         dataStore.data.first()[key] ?: defaultValue
 
-    // This Sets the value based on the value passed in value parameter.
+    /**
+     * This Sets the value based on the value passed in value parameter.
+     * */
     suspend fun <T> addPreference(key: Preferences.Key<T>, value: T) {
         dataStore.edit { preferences ->
             preferences[key] = value

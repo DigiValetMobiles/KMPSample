@@ -11,17 +11,17 @@ import Shared
 
 enum StateSwift {
     case loading
-    case success(data: [ContinentsQuery.Continent])
+    case success(data: [Continent])
     case error(errorCode: String)
 }
 
 extension StateSwift {
-    init?(_ value: States) {
+    init?(_ value: States<NSArray>) {
         switch value {
         case is StatesLoading:
             self = .loading
         case let success as StatesSuccess<AnyObject>:
-            self = .success(data: success.data as! [ContinentsQuery.Continent])
+            self = .success(data: success.data as! [Continent])
         case let error as StatesError:
             self = .error(errorCode: error.debugDescription)
         default:

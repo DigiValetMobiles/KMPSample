@@ -8,6 +8,9 @@ import com.apollographql.apollo3.cache.normalized.sql.SqlNormalizedCacheFactory
 
 internal object ApolloInstance {
 
+    /**
+     * Get apollo client
+     * */
     fun getApolloClient(): ApolloClient {
         val apolloClient = ApolloClient.Builder()
             .serverUrl("https://countries.trevorblades.com/graphql")

@@ -9,21 +9,23 @@
 import Foundation
 import Shared
 
-var responseData: [ContinentsQuery.Continent] = []
-func getAllContinents() {
-    let xyz = KoinDependencies().countriesRepository
-    xyz.getContinents { state, error in
-        let result = StateSwift(state!)
-        switch result {
-        case .loading:
-            print("loading")
-        case .success(let data):
-            responseData = data
-            print(responseData)
-        case .error(let error):
-            print(error)
-        case nil:
-            break
-        }
+class ViewModel: ObservableObject {
+    @Published var responseData: [Continent] = []
+    func getAllContinents() {
+        let xyz = KoinDependencies().continentsUseCase
+        xyz.invoke(completionHandler: { [self] state, error in
+            let result = StateSwift(state!)
+            switch result {
+            case .loading:
+                print("loading")
+            case .success(let data):
+                self.responseData = data
+                print(responseData)
+            case .error(let error):
+                print(error)
+            case nil:
+                break
+            }
+        })
     }
 }

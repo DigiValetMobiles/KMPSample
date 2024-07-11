@@ -6,26 +6,25 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinxSerialization)
     alias(libs.plugins.ksp)
-//    alias(libs.plugins.kmpNativeCoroutines)
     alias(libs.plugins.apollo)
+    alias(libs.plugins.room)
+
 }
 
 kotlin {
     androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
-        compilerOptions {
+        @OptIn(ExperimentalKotlinGradlePluginApi::class) compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
 
     listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
+        iosX64(), iosArm64(), iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
             baseName = "Shared"
             isStatic = true
+            linkerOpts.add("-lsqlite3") // add sqlite
         }
     }
 
@@ -35,6 +34,9 @@ kotlin {
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
+
+            // Fixes RoomDB unresolved reference 'instantiateImpl' in iosMain
+//            kotlin.srcDirs("build/generated/ksp/metadata")
         }
         commonMain.dependencies {
             implementation(libs.ktor.client.core)
@@ -46,16 +48,10 @@ kotlin {
             implementation(libs.apollo.normalized.cache.sqlite)
             api(libs.androidx.datastore.preferences.core)
             api(libs.androidx.datastore.core.okio)
-
-//            api(libs.kmp.observable.viewmodel)
-
+            implementation(libs.androidx.room.runtime)
+            implementation(libs.sqlite.bundled)
         }
 
-        // Required by KMM-ViewModel
-        all {
-            languageSettings.optIn("kotlinx.cinterop.ExperimentalForeignApi")
-            languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
-        }
     }
 
     task("testClasses")
@@ -63,11 +59,22 @@ kotlin {
     apollo {
         // instruct the compiler to generate Kotlin models
         generateKotlinModels.set(true)
-//        packageNamesFromFilePaths()
         sourceFolder.set("../kotlin/com/jetbrains/kmpapp/graphql")
         packageName.set("com.jetbrains.kmpapp.graphql")
     }
 
+}
+
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
+dependencies {
+    ksp(libs.androidx.room.compiler)
+//    add("kspAndroid", libs.androidx.room.compiler)
+//    add("kspIosSimulatorArm64", libs.androidx.room.compiler)
+//    add("kspIosX64", libs.androidx.room.compiler)
+//    add("kspIosArm64", libs.androidx.room.compiler)
 }
 
 android {

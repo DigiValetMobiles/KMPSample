@@ -11,7 +11,10 @@ import kotlinx.serialization.json.Json
 
 class ContinentsUseCase(private val countriesRepository: CountriesRepository) {
 
-    suspend operator fun invoke(): States<List<Continent?>> {
+    /**
+     * Get list of all continents and their data
+     * */
+    suspend fun getContinentsData(): States<List<Continent?>> {
         return if (DataStorePreferences.getFirstPreference(
                 AppPreferenceKeys.GET_CONTINENTS_FROM_NETWORK, true
             )

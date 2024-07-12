@@ -5,7 +5,9 @@ import com.apollographql.apollo3.cache.normalized.api.NormalizedCacheFactory
 import com.apollographql.apollo3.cache.normalized.normalizedCache
 import com.apollographql.apollo3.cache.normalized.sql.SqlNormalizedCacheFactory
 
-
+/**
+ * ApolloInstance object
+ * */
 internal object ApolloInstance {
 
     /**

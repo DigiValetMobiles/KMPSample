@@ -2,15 +2,14 @@ package com.jetbrains.kmpapp.database
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.TypeConverter
-import androidx.room.Upsert
 import com.apollographql.apollo3.api.Operation
 import com.apollographql.apollo3.api.json.buildJsonString
 import com.apollographql.apollo3.api.toJson
 import com.jetbrains.kmpapp.data.Continent
 import com.jetbrains.kmpapp.data.Country
-import kotlinx.coroutines.flow.Flow
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
@@ -20,8 +19,14 @@ interface CountriesDao {
     @Query("SELECT * FROM Continent")
     suspend fun getContinents(): List<Continent>
 
-    @Insert(Continent::class)
-    suspend fun insertContinents(vararg continents: Continent)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertContinent(continent: Continent)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertContinents(continents: List<Continent>)
+
+    @Query("DELETE FROM Continent")
+    suspend fun deleteContinents()
 
 }
 
@@ -47,7 +52,7 @@ class MyTypeConverter {
     }
 
     @TypeConverter
-    fun toJson(list: List<*>): String {
+    fun toJson(list: List<Country?>): String {
         return Json.encodeToString(list)
     }
 }

@@ -1,28 +1,30 @@
 package com.jetbrains.kmpapp
 
 import android.app.Application
-import com.apollographql.apollo3.cache.normalized.sql.SqlNormalizedCacheFactory
 import com.jetbrains.kmpapp.di.initKoin
-import com.jetbrains.kmpapp.screens.ContinentsViewModel
-import com.jetbrains.kmpapp.screens.DetailsViewModel
-import org.koin.dsl.module
+import com.jetbrains.kmpapp.screens.cachinglist.CachingListViewModel
+import com.jetbrains.kmpapp.screens.contientdetail.ContinentDetailViewModel
+import com.jetbrains.kmpapp.screens.continentslist.ContinentsListViewModel
 import org.koin.android.ext.koin.androidContext
+import org.koin.dsl.module
 
+/**
+ * KMP application class
+ * */
 class KmpApp : Application() {
+
+    /**
+     * Initialize Koin Dependencies and Data Store
+     * */
     override fun onCreate() {
         super.onCreate()
-        initKoin(
-            listOf(
-                module {
-//                    single<AppDatabase> { createRoomDatabase(get()) }
-                    factory { ContinentsViewModel(get(), SqlNormalizedCacheFactory(this@KmpApp, "apollo.db")) }
-                    factory { DetailsViewModel(get(), SqlNormalizedCacheFactory(this@KmpApp, "apollo.db")) }
-                }
-            )
-        ){
+        initKoin(listOf(module {
+            factory { CachingListViewModel(get()) }
+            factory { ContinentsListViewModel(get()) }
+            factory { ContinentDetailViewModel(get()) }
+        })) {
             androidContext(applicationContext)
         }
         initDataStore(baseContext)
-//        createRoomDatabase(baseContext)
     }
 }

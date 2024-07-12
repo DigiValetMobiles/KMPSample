@@ -26,8 +26,12 @@ import kotlinx.coroutines.IO
 
 @Database(entities = [Continent::class, Country::class], version = 1)
 @TypeConverters(MyTypeConverter::class)
-abstract class AppDatabase : RoomDatabase() {
+abstract class AppDatabase : RoomDatabase(), DB {
     abstract fun countriesDao(): CountriesDao
+
+    override fun clearAllTables() {
+        super.clearAllTables()
+    }
 }
 
 fun getRoomDatabase(
@@ -39,6 +43,12 @@ fun getRoomDatabase(
         .setDriver(BundledSQLiteDriver())
         .setQueryCoroutineContext(Dispatchers.IO)
         .build()
+}
+
+// FIXME: Added a hack to resolve below issue:
+// Class 'AppDatabase_Impl' is not abstract and does not implement abstract base class member 'clearAllTables'.
+interface DB {
+    fun clearAllTables() {}
 }
 
 internal const val dbFileName = "countries.db"

@@ -1,4 +1,4 @@
-package com.jetbrains.kmpapp.screens
+package com.jetbrains.kmpapp.screens.contientdetail
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.Column
@@ -16,13 +16,19 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.jetbrains.kmpapp.component.EmptyScreenContent
 import com.jetbrains.kmpapp.graphql.ContinentDetailsQuery
 import com.jetbrains.kmpapp.utils.States
 import org.koin.androidx.compose.koinViewModel
 
+/**
+ * Screen to show detail of a continent i.e countries and all
+ *
+ * Note:- Currently not showing this screen
+ * */
 @Composable
-fun DetailScreen(continentCode: String, navigateBack: () -> Unit) {
-    val viewModel: DetailsViewModel = koinViewModel()
+fun ContinentDetailScreen(continentCode: String, navigateBack: () -> Unit) {
+    val viewModel: ContinentDetailViewModel = koinViewModel()
 
     val objects by viewModel.countries.collectAsState()
 
@@ -34,7 +40,6 @@ fun DetailScreen(continentCode: String, navigateBack: () -> Unit) {
                 if (it.data?.countries.isNullOrEmpty()) EmptyScreenContent(Modifier.fillMaxSize())
                 else ObjectGrid(
                     continent = (objects as States.Success<ContinentDetailsQuery.Continent?>).data,
-//                onObjectClick = navigateToDetails,
                 )
             }
 
@@ -43,6 +48,9 @@ fun DetailScreen(continentCode: String, navigateBack: () -> Unit) {
     }
 }
 
+/**
+ * Grid to display to countries
+ * */
 @Composable
 private fun ObjectGrid(
     continent: ContinentDetailsQuery.Continent?,
@@ -55,7 +63,6 @@ private fun ObjectGrid(
             style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Bold)
         )
         LazyVerticalGrid(
-//        columns = GridCells.Adaptive(180.dp),
             columns = GridCells.Fixed(1),
             modifier = modifier.fillMaxSize(),
             contentPadding = PaddingValues(8.dp)
@@ -67,6 +74,9 @@ private fun ObjectGrid(
     }
 }
 
+/**
+ * Countries grid item
+ * */
 @Composable
 private fun ObjectFrame(
     country: ContinentDetailsQuery.Country?,

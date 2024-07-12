@@ -1,4 +1,4 @@
-package com.jetbrains.kmpapp.screens
+package com.jetbrains.kmpapp.screens.continentslist
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.clickable
@@ -17,15 +17,22 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.jetbrains.kmpapp.component.EmptyScreenContent
 import com.jetbrains.kmpapp.data.Continent
+import com.jetbrains.kmpapp.utils.FetchType
 import com.jetbrains.kmpapp.utils.States
 import org.koin.androidx.compose.koinViewModel
 
+
+/**
+ * Screen to show a list of continents
+ * */
 @Composable
-fun CountriesListScreen(
-    navigateToDetails: (continentCode: String) -> Unit,
+fun ContinentsListScreen(
+    navigateToDetails: (continentCode: String) -> Unit, fetchType: String = FetchType.GraphQl.value
 ) {
-    val viewModel: ContinentsViewModel = koinViewModel()
+    val viewModel: ContinentsListViewModel = koinViewModel()
+    viewModel.getContinents(fetchType = fetchType)
     val objects by viewModel.continents.collectAsState()
 
     AnimatedContent(objects) {
@@ -34,7 +41,7 @@ fun CountriesListScreen(
                 if (it.data.isEmpty()) EmptyScreenContent(Modifier.fillMaxSize())
                 else ObjectGrid(
                     objects = (objects as States.Success<List<Continent?>>).data,
-                onObjectClick = navigateToDetails,
+                    onObjectClick = navigateToDetails,
                 )
             }
 
@@ -43,6 +50,9 @@ fun CountriesListScreen(
     }
 }
 
+/**
+ * Grid to display continents
+ * */
 @Composable
 private fun ObjectGrid(
     objects: List<Continent?>,
@@ -50,7 +60,6 @@ private fun ObjectGrid(
     modifier: Modifier = Modifier,
 ) {
     LazyVerticalGrid(
-//        columns = GridCells.Adaptive(180.dp),
         columns = GridCells.Fixed(1),
         modifier = modifier.fillMaxSize(),
         contentPadding = PaddingValues(8.dp)
@@ -61,19 +70,23 @@ private fun ObjectGrid(
     }
 }
 
+/**
+ * Continents Grid Item
+* */
 @Composable
 private fun ObjectFrame(
     obj: Continent?,
     onObjectClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Column(modifier.padding(8.dp)
-        .clickable { obj?.code?.let { onObjectClick(it) } }) {
+    Column(modifier.padding(8.dp).clickable { obj?.code?.let { onObjectClick(it) } }) {
         Text(
             obj?.code.orEmpty(),
             style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Bold)
         )
         Text(obj?.name.orEmpty(), style = MaterialTheme.typography.body2)
-        Text("Countries: ${obj?.countries.orEmpty().size}", style = MaterialTheme.typography.caption)
+        Text(
+            "Countries: ${obj?.countries.orEmpty().size}", style = MaterialTheme.typography.caption
+        )
     }
 }

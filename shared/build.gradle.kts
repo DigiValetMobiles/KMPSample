@@ -12,6 +12,7 @@ plugins {
 }
 
 kotlin {
+
     androidTarget {
         @OptIn(ExperimentalKotlinGradlePluginApi::class) compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
@@ -38,6 +39,9 @@ kotlin {
             // Fixes RoomDB unresolved reference 'instantiateImpl' in iosMain
 //            kotlin.srcDirs("build/generated/ksp/metadata")
         }
+        commonMain {
+            kotlin.srcDirs("build/generated/ksp/metadata")
+        }
         commonMain.dependencies {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
@@ -58,9 +62,13 @@ kotlin {
 
     apollo {
         // instruct the compiler to generate Kotlin models
-        generateKotlinModels.set(true)
-        sourceFolder.set("../kotlin/com/jetbrains/kmpapp/graphql")
-        packageName.set("com.jetbrains.kmpapp.graphql")
+
+        service("countries") {
+            generateKotlinModels.set(true)
+            sourceFolder.set("../kotlin/com/jetbrains/kmpapp/graphql")
+            packageName.set("com.jetbrains.kmpapp.graphql")
+        }
+
     }
 
 }
@@ -70,11 +78,40 @@ room {
 }
 
 dependencies {
-    ksp(libs.androidx.room.compiler)
+//    ksp(libs.androidx.room.compiler)
 //    add("kspAndroid", libs.androidx.room.compiler)
+    add("kspCommonMainMetadata", libs.androidx.room.compiler)
 //    add("kspIosSimulatorArm64", libs.androidx.room.compiler)
 //    add("kspIosX64", libs.androidx.room.compiler)
 //    add("kspIosArm64", libs.androidx.room.compiler)
+
+
+    //JVM Target
+//    kspJvm(libs.androidx.room.compiler)
+
+    // Android Target
+//    kspAndroid(libs.androidx.room.compiler)
+
+    // JS Target (for both legacy and IR compilers)
+//    kspJs(libs.androidx.room.compiler)
+
+    // iOS Targets
+//    kspIosArm64(libs.androidx.room.compiler)
+//    kspIosX64(libs.androidx.room.compiler)
+//    kspIosSimulatorArm64(libs.androidx.room.compiler)
+
+    // Other potential targets (adjust as per your project)
+//     kspLinuxX64(libs.androidx.room.compiler)
+//     kspMacOSArm64(libs.androidx.room.compiler)
+//     kspMacOSX64(libs.androidx.room.compiler)
+//     kspMingwX64(libs.androidx.room.compiler)
+//     kspWasmJs(libs.androidx.room.compiler)
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
+    if (name != "kspCommonMainKotlinMetadata" ) {
+        dependsOn("kspCommonMainKotlinMetadata")
+    }
 }
 
 android {

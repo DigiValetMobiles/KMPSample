@@ -21,9 +21,6 @@
 		272802C22C2041430059D4EF /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 272802AB2C2041430059D4EF /* countries.json */; };
 		272802C32C2041430059D4EF /* CountriesRepository.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802AC2C2041430059D4EF /* CountriesRepository.kt */; };
 		272802C42C2041430059D4EF /* GetContinents.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 272802AD2C2041430059D4EF /* GetContinents.graphql */; };
-		272802C52C2041430059D4EF /* DetailViewModel.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802AF2C2041430059D4EF /* DetailViewModel.kt */; };
-		272802C62C2041430059D4EF /* ListViewModel.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802B02C2041430059D4EF /* ListViewModel.kt */; };
-		272802C72C2041430059D4EF /* AppDispatcher.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802B22C2041430059D4EF /* AppDispatcher.kt */; };
 		272802C82C2041430059D4EF /* ErrorManager.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802B32C2041430059D4EF /* ErrorManager.kt */; };
 		272802C92C2041430059D4EF /* States.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802B42C2041430059D4EF /* States.kt */; };
 		27F012992C393BCB0050224A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F012982C393BC20050224A /* libsqlite3.tbd */; };
@@ -63,9 +60,6 @@
 		272802AB2C2041430059D4EF /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		272802AC2C2041430059D4EF /* CountriesRepository.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CountriesRepository.kt; sourceTree = "<group>"; };
 		272802AD2C2041430059D4EF /* GetContinents.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetContinents.graphql; sourceTree = "<group>"; };
-		272802AF2C2041430059D4EF /* DetailViewModel.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DetailViewModel.kt; sourceTree = "<group>"; };
-		272802B02C2041430059D4EF /* ListViewModel.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ListViewModel.kt; sourceTree = "<group>"; };
-		272802B22C2041430059D4EF /* AppDispatcher.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppDispatcher.kt; sourceTree = "<group>"; };
 		272802B32C2041430059D4EF /* ErrorManager.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ErrorManager.kt; sourceTree = "<group>"; };
 		272802B42C2041430059D4EF /* States.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = States.kt; sourceTree = "<group>"; };
 		27F012962C393BB70050224A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -186,7 +180,6 @@
 		272802B52C2041430059D4EF /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				272802B22C2041430059D4EF /* AppDispatcher.kt */,
 				272802B32C2041430059D4EF /* ErrorManager.kt */,
 				272802B42C2041430059D4EF /* States.kt */,
 			);
@@ -376,7 +369,6 @@
 				272802C52C2041430059D4EF /* DetailViewModel.kt in Resources */,
 				272802C92C2041430059D4EF /* States.kt in Resources */,
 				272802C02C2041430059D4EF /* Koin.kt in Resources */,
-				272802C72C2041430059D4EF /* AppDispatcher.kt in Resources */,
 				272802C42C2041430059D4EF /* GetContinents.graphql in Resources */,
 				272802BE2C2041430059D4EF /* MuseumRepository.kt in Resources */,
 				272802BD2C2041430059D4EF /* MuseumObject.kt in Resources */,

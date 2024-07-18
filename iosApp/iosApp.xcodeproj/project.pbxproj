@@ -140,17 +140,17 @@
 		35D231892C46416900FF1B5F /* com */ = {
 			isa = PBXGroup;
 			children = (
-				35D2318A2C46416900FF1B5F /* jetbrains */,
+				35D2318A2C46416900FF1B5F /* paragon */,
 			);
 			path = com;
 			sourceTree = "<group>";
 		};
-		35D2318A2C46416900FF1B5F /* jetbrains */ = {
+		35D2318A2C46416900FF1B5F /* paragon */ = {
 			isa = PBXGroup;
 			children = (
 				35D2318B2C46416900FF1B5F /* kmpapp */,
 			);
-			path = jetbrains;
+			path = paragon;
 			sourceTree = "<group>";
 		};
 		35D2318B2C46416900FF1B5F /* kmpapp */ = {
@@ -256,17 +256,17 @@
 		35D231A92C46416900FF1B5F /* com */ = {
 			isa = PBXGroup;
 			children = (
-				35D231AA2C46416900FF1B5F /* jetbrains */,
+				35D231AA2C46416900FF1B5F /* paragon */,
 			);
 			path = com;
 			sourceTree = "<group>";
 		};
-		35D231AA2C46416900FF1B5F /* jetbrains */ = {
+		35D231AA2C46416900FF1B5F /* paragon */ = {
 			isa = PBXGroup;
 			children = (
 				35D231AB2C46416900FF1B5F /* kmpapp */,
 			);
-			path = jetbrains;
+			path = paragon;
 			sourceTree = "<group>";
 		};
 		35D231AB2C46416900FF1B5F /* kmpapp */ = {

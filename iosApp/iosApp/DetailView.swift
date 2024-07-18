@@ -21,7 +21,7 @@ struct DetailView: View {
 }
 
 struct ObjectDetails: View {
-    var obj: MuseumObject
+    var obj: Continent
 
     var body: some View {
         ScrollView {
@@ -42,16 +42,16 @@ struct ObjectDetails: View {
 //                }
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(obj.title)
+                    Text(obj.name ?? "")
                         .font(.title)
 
-                    LabeledInfo(label: "Artist", data: obj.artistDisplayName)
-                    LabeledInfo(label: "Date", data: obj.objectDate)
-                    LabeledInfo(label: "Dimensions", data: obj.dimensions)
-                    LabeledInfo(label: "Medium", data: obj.medium)
-                    LabeledInfo(label: "Department", data: obj.department)
-                    LabeledInfo(label: "Repository", data: obj.repository)
-                    LabeledInfo(label: "Credits", data: obj.creditLine)
+//                    LabeledInfo(label: "Artist", data: obj.artistDisplayName)
+//                    LabeledInfo(label: "Date", data: obj.objectDate)
+//                    LabeledInfo(label: "Dimensions", data: obj.dimensions)
+//                    LabeledInfo(label: "Medium", data: obj.medium)
+//                    LabeledInfo(label: "Department", data: obj.department)
+//                    LabeledInfo(label: "Repository", data: obj.repository)
+//                    LabeledInfo(label: "Credits", data: obj.creditLine)
                 }
                 .padding(16)
 //            }

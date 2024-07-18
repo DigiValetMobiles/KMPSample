@@ -61,12 +61,11 @@ kotlin {
     task("testClasses")
 
     apollo {
-        // instruct the compiler to generate Kotlin models
-
         service("countries") {
+        // instruct the compiler to generate Kotlin models
             generateKotlinModels.set(true)
-            sourceFolder.set("../kotlin/com/jetbrains/kmpapp/graphql")
-            packageName.set("com.jetbrains.kmpapp.graphql")
+            sourceFolder.set("../kotlin/com/paragon/kmpapp/graphql")
+            packageName.set("com.paragon.kmpapp.graphql")
         }
 
     }
@@ -115,7 +114,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach
 }
 
 android {
-    namespace = "com.jetbrains.kmpapp.shared"
+    namespace = "com.paragon.kmpapp.shared"
     compileSdk = 34
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

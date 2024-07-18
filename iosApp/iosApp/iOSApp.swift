@@ -6,7 +6,7 @@ struct iOSApp: App {
     init() {
 //                    single<AppDatabase> { createRoomDatabase(get()) }
         KoinKt.doInitKoin()
-        DataStore_iOSKt.createDataStore()
+        DataStore_iosKt.createDataStore()
     }
     
     var body: some Scene {

@@ -10,22 +10,33 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
-		272802BB2C2041430059D4EF /* KoinDependencies.kt in Resources */ = {isa = PBXBuildFile; fileRef = 2728029D2C2041430059D4EF /* KoinDependencies.kt */; };
-		272802BC2C2041430059D4EF /* MuseumApi.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802A32C2041430059D4EF /* MuseumApi.kt */; };
-		272802BD2C2041430059D4EF /* MuseumObject.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802A42C2041430059D4EF /* MuseumObject.kt */; };
-		272802BE2C2041430059D4EF /*
-		MuseumRepository.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802A52C2041430059D4EF /* MuseumRepository.kt */; };
-		272802BF2C2041430059D4EF /* MuseumStorage.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802A62C2041430059D4EF /* MuseumStorage.kt */; };
-		272802C02C2041430059D4EF /* Koin.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802A82C2041430059D4EF /* Koin.kt */; };
-		272802C12C2041430059D4EF /* ApolloInstance.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802AA2C2041430059D4EF /* ApolloInstance.kt */; };
-		272802C22C2041430059D4EF /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 272802AB2C2041430059D4EF /* countries.json */; };
-		272802C32C2041430059D4EF /* CountriesRepository.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802AC2C2041430059D4EF /* CountriesRepository.kt */; };
-		272802C42C2041430059D4EF /* GetContinents.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 272802AD2C2041430059D4EF /* GetContinents.graphql */; };
-		272802C82C2041430059D4EF /* ErrorManager.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802B32C2041430059D4EF /* ErrorManager.kt */; };
-		272802C92C2041430059D4EF /* States.kt in Resources */ = {isa = PBXBuildFile; fileRef = 272802B42C2041430059D4EF /* States.kt */; };
 		27F012992C393BCB0050224A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F012982C393BC20050224A /* libsqlite3.tbd */; };
+		35181BEC2C48E34B005194CC /* FetchedDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35181BEB2C48E34B005194CC /* FetchedDataList.swift */; };
 		359241E82C2D2C8A00DDF118 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359241E62C2D2C8A00DDF118 /* ViewModel.swift */; };
 		359241E92C2D2C8A00DDF118 /* EnumCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359241E72C2D2C8A00DDF118 /* EnumCreation.swift */; };
+		35D231B02C46416900FF1B5F /* CountriesDao.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D2318D2C46416900FF1B5F /* CountriesDao.kt */; };
+		35D231B12C46416900FF1B5F /* AppDatabase.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D2318E2C46416900FF1B5F /* AppDatabase.kt */; };
+		35D231B22C46416900FF1B5F /* Koin.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231902C46416900FF1B5F /* Koin.kt */; };
+		35D231B32C46416900FF1B5F /* States.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231922C46416900FF1B5F /* States.kt */; };
+		35D231B42C46416900FF1B5F /* FetchType.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231932C46416900FF1B5F /* FetchType.kt */; };
+		35D231B52C46416900FF1B5F /* ErrorManager.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231942C46416900FF1B5F /* ErrorManager.kt */; };
+		35D231B62C46416900FF1B5F /* AppPreferenceKeys.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231962C46416900FF1B5F /* AppPreferenceKeys.kt */; };
+		35D231B72C46416900FF1B5F /* DataStorePreferences.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231972C46416900FF1B5F /* DataStorePreferences.kt */; };
+		35D231B82C46416900FF1B5F /* DataPreferenceKeys.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231982C46416900FF1B5F /* DataPreferenceKeys.kt */; };
+		35D231B92C46416900FF1B5F /* CountriesRepository.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D2319A2C46416900FF1B5F /* CountriesRepository.kt */; };
+		35D231BA2C46416900FF1B5F /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 35D2319B2C46416900FF1B5F /* countries.json */; };
+		35D231BB2C46416900FF1B5F /* ApolloInstance.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D2319C2C46416900FF1B5F /* ApolloInstance.kt */; };
+		35D231BC2C46416900FF1B5F /* GetContinents.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 35D2319D2C46416900FF1B5F /* GetContinents.graphql */; };
+		35D231BD2C46416900FF1B5F /* GetCountries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 35D2319E2C46416900FF1B5F /* GetCountries.graphql */; };
+		35D231BE2C46416900FF1B5F /* MuseumApi.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231A02C46416900FF1B5F /* MuseumApi.kt */; };
+		35D231BF2C46416900FF1B5F /* MuseumStorage.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231A12C46416900FF1B5F /* MuseumStorage.kt */; };
+		35D231C02C46416900FF1B5F /* MuseumObject.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231A22C46416900FF1B5F /* MuseumObject.kt */; };
+		35D231C12C46416900FF1B5F /* Countries.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231A32C46416900FF1B5F /* Countries.kt */; };
+		35D231C22C46416900FF1B5F /* MuseumRepository.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231A42C46416900FF1B5F /* MuseumRepository.kt */; };
+		35D231C32C46416900FF1B5F /* ContinentsUseCase.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231A62C46416900FF1B5F /* ContinentsUseCase.kt */; };
+		35D231C42C46416900FF1B5F /* Koin.ios.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231AD2C46416900FF1B5F /* Koin.ios.kt */; };
+		35D231C52C46416900FF1B5F /* DataStore.ios.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231AE2C46416900FF1B5F /* DataStore.ios.kt */; };
+		35D231C62C46416900FF1B5F /* KoinDependencies.kt in Resources */ = {isa = PBXBuildFile; fileRef = 35D231AF2C46416900FF1B5F /* KoinDependencies.kt */; };
 		35D909AE2C2559C700829366 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D909AD2C2559B800829366 /* Shared.framework */; };
 		35D909AF2C2559C700829366 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35D909AD2C2559B800829366 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7555FF83242A565900829871 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ListView.swift */; };
@@ -50,24 +61,36 @@
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
-		2728029D2C2041430059D4EF /* KoinDependencies.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KoinDependencies.kt; sourceTree = "<group>"; };
-		272802A32C2041430059D4EF /* MuseumApi.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MuseumApi.kt; sourceTree = "<group>"; };
-		272802A42C2041430059D4EF /* MuseumObject.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MuseumObject.kt; sourceTree = "<group>"; };
-		272802A52C2041430059D4EF /* MuseumRepository.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MuseumRepository.kt; sourceTree = "<group>"; };
-		272802A62C2041430059D4EF /* MuseumStorage.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MuseumStorage.kt; sourceTree = "<group>"; };
-		272802A82C2041430059D4EF /* Koin.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Koin.kt; sourceTree = "<group>"; };
-		272802AA2C2041430059D4EF /* ApolloInstance.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ApolloInstance.kt; sourceTree = "<group>"; };
-		272802AB2C2041430059D4EF /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
-		272802AC2C2041430059D4EF /* CountriesRepository.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CountriesRepository.kt; sourceTree = "<group>"; };
-		272802AD2C2041430059D4EF /* GetContinents.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetContinents.graphql; sourceTree = "<group>"; };
-		272802B32C2041430059D4EF /* ErrorManager.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ErrorManager.kt; sourceTree = "<group>"; };
-		272802B42C2041430059D4EF /* States.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = States.kt; sourceTree = "<group>"; };
 		27F012962C393BB70050224A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		27F012982C393BC20050224A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		35181BEB2C48E34B005194CC /* FetchedDataList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedDataList.swift; sourceTree = "<group>"; };
 		359241E62C2D2C8A00DDF118 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		359241E72C2D2C8A00DDF118 /* EnumCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCreation.swift; sourceTree = "<group>"; };
 		35A68E322C2558240094BC0E /* SharedWithYou.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedWithYou.framework; path = System/Library/Frameworks/SharedWithYou.framework; sourceTree = SDKROOT; };
 		35A68E332C2558240094BC0E /* SharedWithYouCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedWithYouCore.framework; path = System/Library/Frameworks/SharedWithYouCore.framework; sourceTree = SDKROOT; };
+		35D2318D2C46416900FF1B5F /* CountriesDao.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CountriesDao.kt; sourceTree = "<group>"; };
+		35D2318E2C46416900FF1B5F /* AppDatabase.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppDatabase.kt; sourceTree = "<group>"; };
+		35D231902C46416900FF1B5F /* Koin.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Koin.kt; sourceTree = "<group>"; };
+		35D231922C46416900FF1B5F /* States.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = States.kt; sourceTree = "<group>"; };
+		35D231932C46416900FF1B5F /* FetchType.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FetchType.kt; sourceTree = "<group>"; };
+		35D231942C46416900FF1B5F /* ErrorManager.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ErrorManager.kt; sourceTree = "<group>"; };
+		35D231962C46416900FF1B5F /* AppPreferenceKeys.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppPreferenceKeys.kt; sourceTree = "<group>"; };
+		35D231972C46416900FF1B5F /* DataStorePreferences.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DataStorePreferences.kt; sourceTree = "<group>"; };
+		35D231982C46416900FF1B5F /* DataPreferenceKeys.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DataPreferenceKeys.kt; sourceTree = "<group>"; };
+		35D2319A2C46416900FF1B5F /* CountriesRepository.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CountriesRepository.kt; sourceTree = "<group>"; };
+		35D2319B2C46416900FF1B5F /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		35D2319C2C46416900FF1B5F /* ApolloInstance.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ApolloInstance.kt; sourceTree = "<group>"; };
+		35D2319D2C46416900FF1B5F /* GetContinents.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetContinents.graphql; sourceTree = "<group>"; };
+		35D2319E2C46416900FF1B5F /* GetCountries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetCountries.graphql; sourceTree = "<group>"; };
+		35D231A02C46416900FF1B5F /* MuseumApi.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MuseumApi.kt; sourceTree = "<group>"; };
+		35D231A12C46416900FF1B5F /* MuseumStorage.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MuseumStorage.kt; sourceTree = "<group>"; };
+		35D231A22C46416900FF1B5F /* MuseumObject.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MuseumObject.kt; sourceTree = "<group>"; };
+		35D231A32C46416900FF1B5F /* Countries.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countries.kt; sourceTree = "<group>"; };
+		35D231A42C46416900FF1B5F /* MuseumRepository.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MuseumRepository.kt; sourceTree = "<group>"; };
+		35D231A62C46416900FF1B5F /* ContinentsUseCase.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ContinentsUseCase.kt; sourceTree = "<group>"; };
+		35D231AD2C46416900FF1B5F /* Koin.ios.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Koin.ios.kt; sourceTree = "<group>"; };
+		35D231AE2C46416900FF1B5F /* DataStore.ios.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DataStore.ios.kt; sourceTree = "<group>"; };
+		35D231AF2C46416900FF1B5F /* KoinDependencies.kt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KoinDependencies.kt; sourceTree = "<group>"; };
 		35D909AD2C2559B800829366 /* Shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shared.framework; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* KMP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KMP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -97,138 +120,171 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2728029E2C2041430059D4EF /* kmpapp */ = {
+		35D231872C46416900FF1B5F /* commonMain */ = {
 			isa = PBXGroup;
 			children = (
-				2728029D2C2041430059D4EF /* KoinDependencies.kt */,
+				35D231882C46416900FF1B5F /* kotlin */,
 			);
-			path = kmpapp;
+			name = commonMain;
+			path = ../shared/src/commonMain;
 			sourceTree = "<group>";
 		};
-		2728029F2C2041430059D4EF /* jetbrains */ = {
+		35D231882C46416900FF1B5F /* kotlin */ = {
 			isa = PBXGroup;
 			children = (
-				2728029E2C2041430059D4EF /* kmpapp */,
-			);
-			path = jetbrains;
-			sourceTree = "<group>";
-		};
-		272802A02C2041430059D4EF /* com */ = {
-			isa = PBXGroup;
-			children = (
-				2728029F2C2041430059D4EF /* jetbrains */,
-			);
-			path = com;
-			sourceTree = "<group>";
-		};
-		272802A12C2041430059D4EF /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				272802A02C2041430059D4EF /* com */,
+				35D231892C46416900FF1B5F /* com */,
 			);
 			path = kotlin;
 			sourceTree = "<group>";
 		};
-		272802A22C2041430059D4EF /* iosMain */ = {
+		35D231892C46416900FF1B5F /* com */ = {
 			isa = PBXGroup;
 			children = (
-				272802A12C2041430059D4EF /* kotlin */,
+				35D2318A2C46416900FF1B5F /* jetbrains */,
+			);
+			path = com;
+			sourceTree = "<group>";
+		};
+		35D2318A2C46416900FF1B5F /* jetbrains */ = {
+			isa = PBXGroup;
+			children = (
+				35D2318B2C46416900FF1B5F /* kmpapp */,
+			);
+			path = jetbrains;
+			sourceTree = "<group>";
+		};
+		35D2318B2C46416900FF1B5F /* kmpapp */ = {
+			isa = PBXGroup;
+			children = (
+				35D2318C2C46416900FF1B5F /* database */,
+				35D2318F2C46416900FF1B5F /* di */,
+				35D231912C46416900FF1B5F /* utils */,
+				35D231952C46416900FF1B5F /* local */,
+				35D231992C46416900FF1B5F /* graphql */,
+				35D2319F2C46416900FF1B5F /* data */,
+				35D231A52C46416900FF1B5F /* usecases */,
+			);
+			path = kmpapp;
+			sourceTree = "<group>";
+		};
+		35D2318C2C46416900FF1B5F /* database */ = {
+			isa = PBXGroup;
+			children = (
+				35D2318D2C46416900FF1B5F /* CountriesDao.kt */,
+				35D2318E2C46416900FF1B5F /* AppDatabase.kt */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
+		35D2318F2C46416900FF1B5F /* di */ = {
+			isa = PBXGroup;
+			children = (
+				35D231902C46416900FF1B5F /* Koin.kt */,
+			);
+			path = di;
+			sourceTree = "<group>";
+		};
+		35D231912C46416900FF1B5F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				35D231922C46416900FF1B5F /* States.kt */,
+				35D231932C46416900FF1B5F /* FetchType.kt */,
+				35D231942C46416900FF1B5F /* ErrorManager.kt */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		35D231952C46416900FF1B5F /* local */ = {
+			isa = PBXGroup;
+			children = (
+				35D231962C46416900FF1B5F /* AppPreferenceKeys.kt */,
+				35D231972C46416900FF1B5F /* DataStorePreferences.kt */,
+				35D231982C46416900FF1B5F /* DataPreferenceKeys.kt */,
+			);
+			path = local;
+			sourceTree = "<group>";
+		};
+		35D231992C46416900FF1B5F /* graphql */ = {
+			isa = PBXGroup;
+			children = (
+				35D2319A2C46416900FF1B5F /* CountriesRepository.kt */,
+				35D2319B2C46416900FF1B5F /* countries.json */,
+				35D2319C2C46416900FF1B5F /* ApolloInstance.kt */,
+				35D2319D2C46416900FF1B5F /* GetContinents.graphql */,
+				35D2319E2C46416900FF1B5F /* GetCountries.graphql */,
+			);
+			path = graphql;
+			sourceTree = "<group>";
+		};
+		35D2319F2C46416900FF1B5F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				35D231A02C46416900FF1B5F /* MuseumApi.kt */,
+				35D231A12C46416900FF1B5F /* MuseumStorage.kt */,
+				35D231A22C46416900FF1B5F /* MuseumObject.kt */,
+				35D231A32C46416900FF1B5F /* Countries.kt */,
+				35D231A42C46416900FF1B5F /* MuseumRepository.kt */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		35D231A52C46416900FF1B5F /* usecases */ = {
+			isa = PBXGroup;
+			children = (
+				35D231A62C46416900FF1B5F /* ContinentsUseCase.kt */,
+			);
+			path = usecases;
+			sourceTree = "<group>";
+		};
+		35D231A72C46416900FF1B5F /* iosMain */ = {
+			isa = PBXGroup;
+			children = (
+				35D231A82C46416900FF1B5F /* kotlin */,
 			);
 			name = iosMain;
 			path = ../shared/src/iosMain;
 			sourceTree = "<group>";
 		};
-		272802A72C2041430059D4EF /* data */ = {
+		35D231A82C46416900FF1B5F /* kotlin */ = {
 			isa = PBXGroup;
 			children = (
-				272802A32C2041430059D4EF /* MuseumApi.kt */,
-				272802A42C2041430059D4EF /* MuseumObject.kt */,
-				272802A52C2041430059D4EF /* MuseumRepository.kt */,
-				272802A62C2041430059D4EF /* MuseumStorage.kt */,
-			);
-			path = data;
-			sourceTree = "<group>";
-		};
-		272802A92C2041430059D4EF /* di */ = {
-			isa = PBXGroup;
-			children = (
-				272802A82C2041430059D4EF /* Koin.kt */,
-			);
-			path = di;
-			sourceTree = "<group>";
-		};
-		272802AE2C2041430059D4EF /* graphql */ = {
-			isa = PBXGroup;
-			children = (
-				272802AA2C2041430059D4EF /* ApolloInstance.kt */,
-				272802AB2C2041430059D4EF /* countries.json */,
-				272802AC2C2041430059D4EF /* CountriesRepository.kt */,
-				272802AD2C2041430059D4EF /* GetContinents.graphql */,
-			);
-			path = graphql;
-			sourceTree = "<group>";
-		};
-		272802B12C2041430059D4EF /* screens */ = {
-			isa = PBXGroup;
-			children = (
-				272802AF2C2041430059D4EF /* DetailViewModel.kt */,
-				272802B02C2041430059D4EF /* ListViewModel.kt */,
-			);
-			path = screens;
-			sourceTree = "<group>";
-		};
-		272802B52C2041430059D4EF /* utils */ = {
-			isa = PBXGroup;
-			children = (
-				272802B32C2041430059D4EF /* ErrorManager.kt */,
-				272802B42C2041430059D4EF /* States.kt */,
-			);
-			path = utils;
-			sourceTree = "<group>";
-		};
-		272802B62C2041430059D4EF /* kmpapp */ = {
-			isa = PBXGroup;
-			children = (
-				272802A72C2041430059D4EF /* data */,
-				272802A92C2041430059D4EF /* di */,
-				272802AE2C2041430059D4EF /* graphql */,
-				272802B12C2041430059D4EF /* screens */,
-				272802B52C2041430059D4EF /* utils */,
-			);
-			path = kmpapp;
-			sourceTree = "<group>";
-		};
-		272802B72C2041430059D4EF /* jetbrains */ = {
-			isa = PBXGroup;
-			children = (
-				272802B62C2041430059D4EF /* kmpapp */,
-			);
-			path = jetbrains;
-			sourceTree = "<group>";
-		};
-		272802B82C2041430059D4EF /* com */ = {
-			isa = PBXGroup;
-			children = (
-				272802B72C2041430059D4EF /* jetbrains */,
-			);
-			path = com;
-			sourceTree = "<group>";
-		};
-		272802B92C2041430059D4EF /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				272802B82C2041430059D4EF /* com */,
+				35D231A92C46416900FF1B5F /* com */,
 			);
 			path = kotlin;
 			sourceTree = "<group>";
 		};
-		272802BA2C2041430059D4EF /* commonMain */ = {
+		35D231A92C46416900FF1B5F /* com */ = {
 			isa = PBXGroup;
 			children = (
-				272802B92C2041430059D4EF /* kotlin */,
+				35D231AA2C46416900FF1B5F /* jetbrains */,
 			);
-			name = commonMain;
-			path = ../shared/src/commonMain;
+			path = com;
+			sourceTree = "<group>";
+		};
+		35D231AA2C46416900FF1B5F /* jetbrains */ = {
+			isa = PBXGroup;
+			children = (
+				35D231AB2C46416900FF1B5F /* kmpapp */,
+			);
+			path = jetbrains;
+			sourceTree = "<group>";
+		};
+		35D231AB2C46416900FF1B5F /* kmpapp */ = {
+			isa = PBXGroup;
+			children = (
+				35D231AC2C46416900FF1B5F /* di */,
+				35D231AE2C46416900FF1B5F /* DataStore.ios.kt */,
+				35D231AF2C46416900FF1B5F /* KoinDependencies.kt */,
+			);
+			path = kmpapp;
+			sourceTree = "<group>";
+		};
+		35D231AC2C46416900FF1B5F /* di */ = {
+			isa = PBXGroup;
+			children = (
+				35D231AD2C46416900FF1B5F /* Koin.ios.kt */,
+			);
+			path = di;
 			sourceTree = "<group>";
 		};
 		39328EC967C5AC80B0A77FB9 /* xcschemes */ = {
@@ -254,8 +310,8 @@
 		7555FF72242A565900829871 = {
 			isa = PBXGroup;
 			children = (
-				272802BA2C2041430059D4EF /* commonMain */,
-				272802A22C2041430059D4EF /* iosMain */,
+				35D231872C46416900FF1B5F /* commonMain */,
+				35D231A72C46416900FF1B5F /* iosMain */,
 				AB1DB47929225F7C00F7AF9C /* Configuration */,
 				7555FF7D242A565900829871 /* iosApp */,
 				7555FF7C242A565900829871 /* Products */,
@@ -276,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				359241E72C2D2C8A00DDF118 /* EnumCreation.swift */,
+				35181BEB2C48E34B005194CC /* FetchedDataList.swift */,
 				359241E62C2D2C8A00DDF118 /* ViewModel.swift */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ListView.swift */,
@@ -359,22 +416,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				272802BF2C2041430059D4EF /* MuseumStorage.kt in Resources */,
-				272802C82C2041430059D4EF /* ErrorManager.kt in Resources */,
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
+				35D231B72C46416900FF1B5F /* DataStorePreferences.kt in Resources */,
+				35D231B52C46416900FF1B5F /* ErrorManager.kt in Resources */,
+				35D231B12C46416900FF1B5F /* AppDatabase.kt in Resources */,
+				35D231BC2C46416900FF1B5F /* GetContinents.graphql in Resources */,
+				35D231B32C46416900FF1B5F /* States.kt in Resources */,
+				35D231B62C46416900FF1B5F /* AppPreferenceKeys.kt in Resources */,
+				35D231BB2C46416900FF1B5F /* ApolloInstance.kt in Resources */,
+				35D231B02C46416900FF1B5F /* CountriesDao.kt in Resources */,
+				35D231C12C46416900FF1B5F /* Countries.kt in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
-				272802BB2C2041430059D4EF /* KoinDependencies.kt in Resources */,
-				272802BC2C2041430059D4EF /* MuseumApi.kt in Resources */,
-				272802C32C2041430059D4EF /* CountriesRepository.kt in Resources */,
-				272802C52C2041430059D4EF /* DetailViewModel.kt in Resources */,
-				272802C92C2041430059D4EF /* States.kt in Resources */,
-				272802C02C2041430059D4EF /* Koin.kt in Resources */,
-				272802C42C2041430059D4EF /* GetContinents.graphql in Resources */,
-				272802BE2C2041430059D4EF /* MuseumRepository.kt in Resources */,
-				272802BD2C2041430059D4EF /* MuseumObject.kt in Resources */,
-				272802C62C2041430059D4EF /* ListViewModel.kt in Resources */,
-				272802C22C2041430059D4EF /* countries.json in Resources */,
-				272802C12C2041430059D4EF /* ApolloInstance.kt in Resources */,
+				35D231BE2C46416900FF1B5F /* MuseumApi.kt in Resources */,
+				35D231B42C46416900FF1B5F /* FetchType.kt in Resources */,
+				35D231C22C46416900FF1B5F /* MuseumRepository.kt in Resources */,
+				35D231BA2C46416900FF1B5F /* countries.json in Resources */,
+				35D231B22C46416900FF1B5F /* Koin.kt in Resources */,
+				35D231C62C46416900FF1B5F /* KoinDependencies.kt in Resources */,
+				35D231C42C46416900FF1B5F /* Koin.ios.kt in Resources */,
+				35D231BF2C46416900FF1B5F /* MuseumStorage.kt in Resources */,
+				35D231C32C46416900FF1B5F /* ContinentsUseCase.kt in Resources */,
+				35D231BD2C46416900FF1B5F /* GetCountries.graphql in Resources */,
+				35D231C02C46416900FF1B5F /* MuseumObject.kt in Resources */,
+				35D231C52C46416900FF1B5F /* DataStore.ios.kt in Resources */,
+				35D231B82C46416900FF1B5F /* DataPreferenceKeys.kt in Resources */,
+				35D231B92C46416900FF1B5F /* CountriesRepository.kt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +475,7 @@
 				EB1C5CC72AE06906002852BE /* DetailView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				359241E82C2D2C8A00DDF118 /* ViewModel.swift in Sources */,
+				35181BEC2C48E34B005194CC /* FetchedDataList.swift in Sources */,
 				7555FF83242A565900829871 /* ListView.swift in Sources */,
 				359241E92C2D2C8A00DDF118 /* EnumCreation.swift in Sources */,
 			);

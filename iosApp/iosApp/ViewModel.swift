@@ -11,9 +11,9 @@ import Shared
 
 class ViewModel: ObservableObject {
     @Published var responseData: [Continent] = []
-    func getAllContinents() {
-        let xyz = KoinDependencies().continentsUseCase
-        xyz.invoke(completionHandler: { [self] state, error in
+    func getAllContinents(fetchType: String) {
+        let continentsUseCase = KoinDependencies().continentsUseCase
+        continentsUseCase.getContinentsData(fetchType: fetchType) { [self] state, error in
             let result = StateSwift(state!)
             switch result {
             case .loading:
@@ -26,6 +26,6 @@ class ViewModel: ObservableObject {
             case nil:
                 break
             }
-        })
+        }
     }
 }

@@ -50,8 +50,8 @@ kotlin {
             implementation(libs.apollo.runtime)
             implementation(libs.apollo.normalized.cache)
             implementation(libs.apollo.normalized.cache.sqlite)
-            api(libs.androidx.datastore.preferences.core)
-            api(libs.androidx.datastore.core.okio)
+            api(libs.androidx.datastore.preferences)
+            api(libs.androidx.datastore.core)
             implementation(libs.androidx.room.runtime)
             implementation(libs.sqlite.bundled)
         }
@@ -84,27 +84,6 @@ dependencies {
 //    add("kspIosX64", libs.androidx.room.compiler)
 //    add("kspIosArm64", libs.androidx.room.compiler)
 
-
-    //JVM Target
-//    kspJvm(libs.androidx.room.compiler)
-
-    // Android Target
-//    kspAndroid(libs.androidx.room.compiler)
-
-    // JS Target (for both legacy and IR compilers)
-//    kspJs(libs.androidx.room.compiler)
-
-    // iOS Targets
-//    kspIosArm64(libs.androidx.room.compiler)
-//    kspIosX64(libs.androidx.room.compiler)
-//    kspIosSimulatorArm64(libs.androidx.room.compiler)
-
-    // Other potential targets (adjust as per your project)
-//     kspLinuxX64(libs.androidx.room.compiler)
-//     kspMacOSArm64(libs.androidx.room.compiler)
-//     kspMacOSX64(libs.androidx.room.compiler)
-//     kspMingwX64(libs.androidx.room.compiler)
-//     kspWasmJs(libs.androidx.room.compiler)
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {

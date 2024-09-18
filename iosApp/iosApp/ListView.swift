@@ -35,7 +35,7 @@ struct ListView: View {
     ]
     
     let columns = [
-        GridItem(alignment: .top)
+        GridItem(alignment: .center)
     ]
 
     var body: some View {
@@ -93,7 +93,7 @@ struct ObjectFrame: View {
     let onClick: () -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack( spacing: 4) {
 //            GeometryReader { geometry in
 //                AsyncImage(url: URL(string: obj.primaryImageSmall)) { phase in
 //                    switch phase {

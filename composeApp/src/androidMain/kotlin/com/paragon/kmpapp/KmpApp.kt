@@ -25,6 +25,6 @@ class KmpApp : Application() {
         })) {
             androidContext(applicationContext)
         }
-        com.paragon.kmpapp.initDataStore(baseContext)
+        initDataStore(baseContext)
     }
 }

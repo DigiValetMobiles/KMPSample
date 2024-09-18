@@ -8,3 +8,7 @@ plugins {
     alias(libs.plugins.kotlinxSerialization) apply false
     alias(libs.plugins.ksp) apply false
 }
+
+tasks.register("clean", Delete::class) {
+    delete(rootProject.layout.buildDirectory)
+}

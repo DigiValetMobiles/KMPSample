@@ -32,7 +32,6 @@ struct FetchedDataList: View {
                         .onAppear(perform: {
                             viewModel.getAllContinents(fetchType: receivedData)
                         })
-                        .padding(.horizontal)
                     }
 //            }
 //            else {

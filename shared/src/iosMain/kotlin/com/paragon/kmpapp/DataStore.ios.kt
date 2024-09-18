@@ -6,8 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import com.paragon.kmpapp.database.AppDatabase
-import com.paragon.kmpapp.database.instantiateImpl
 import com.paragon.kmpapp.database.dbFileName
+import com.paragon.kmpapp.database.instantiateImpl
 import com.paragon.kmpapp.local.DataStorePreferences.dataStoreFileName
 import com.paragon.kmpapp.local.DataStorePreferences.initDataStore
 import kotlinx.cinterop.ExperimentalForeignApi
@@ -35,19 +35,19 @@ fun createDataStore(): DataStore<Preferences> {
 
 }
 
+/**
+ * Room database builder
+ * */
+fun getDatabaseBuilder(): RoomDatabase.Builder<AppDatabase> {
+    val dbFilePath = NSHomeDirectory() + "/${dbFileName}"
+    return Room.databaseBuilder<AppDatabase>(name = dbFilePath,
+        factory = { AppDatabase::class.instantiateImpl() }).setDriver(BundledSQLiteDriver())
+        .setQueryCoroutineContext(Dispatchers.IO)
+}
 
 /**
  * Create room database
  * */
-fun getDatabaseBuilder(): RoomDatabase.Builder<AppDatabase> {
-    val dbFilePath = NSHomeDirectory() + "/${dbFileName}"
-    return Room.databaseBuilder<AppDatabase>(
-        name = dbFilePath,
-        factory =  { AppDatabase::class.instantiateImpl() }
-    ).setDriver(BundledSQLiteDriver())
-        .setQueryCoroutineContext(Dispatchers.IO)
-}
-
 fun getDatabase(): AppDatabase {
     return getDatabaseBuilder().build()
 }
